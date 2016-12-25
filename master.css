@@ -1,0 +1,33 @@
+/*Copyright Benjamin Developments (c) 2016-2017 - All rights reserved*/
+
+.titanic {
+  float: none;
+}
+
+body {
+  text-align: center;
+  background-color: "#FFFFFF";
+  font-family: 'Oswald', sans-serif;
+  transition: background-color 1s;
+}
+
+#text {
+  font-size: 100%;
+  opacity: 0;
+  margin-top: 3%;
+  font-family: 'Montserrat', sans-serif;
+  transition: opacity 2s;
+}
+
+#clockbox {
+  opacity: 0;
+  margin-top: 10%;
+  font-size: 1200%;
+  transition: opacity 1.5s;
+}
+
+#datebox {
+  opacity: 0;
+  font-size: 600%;
+  transition: opacity 1.5s;
+}
