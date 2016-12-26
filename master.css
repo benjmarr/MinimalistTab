@@ -5,21 +5,29 @@
 }
 
 body {
-  text-align: center;
   background-color: "#FFFFFF";
   font-family: 'Oswald', sans-serif;
   transition: background-color 1s;
 }
 
+#options {
+  cursor: pointer;
+  border: none;
+  background-color: "#FFFFFF";
+  opacity: 0;
+  transition: background-color 1s, opacity 1s;
+}
+
 #text {
+  text-align: center;
   font-size: 100%;
   opacity: 0;
-  margin-top: 3%;
   font-family: 'Montserrat', sans-serif;
-  transition: opacity 2s;
+  transition: opacity 0.5s;
 }
 
 #clockbox {
+  text-align: center;
   opacity: 0;
   margin-top: 10%;
   font-size: 1200%;
@@ -27,6 +35,7 @@ body {
 }
 
 #datebox {
+  text-align: center;
   opacity: 0;
   font-size: 600%;
   transition: opacity 1.5s;

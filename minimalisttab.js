@@ -1,6 +1,7 @@
 // Copyright Benjamin Developments (c) 2016-2017 - All rights reserved
 console.log("Minimalist Tab copyright Benjamin Developments (c) 2016-2017 - All rights reserved.");
 var gitUrl = "https://github.com/BenAndy/MinimalistTab/tree/master";
+var newColour;
 // Cookie handlers
 function setCookie(cname, cvalue, exdays) {
   var d = new Date();
@@ -31,6 +32,10 @@ if (document.addEventListener) {
       window.event.returnValue = false;
     };
   });
+};
+// Check for background color
+if (getCookie("background") === "") {
+  setCookie("background", "#BDBDBD", 365);
 };
 // Clock and date
 var nyear;
@@ -64,11 +69,27 @@ function clock() {
   document.getElementById("clockbox").innerHTML = nhour + ":" + nmin + ap;
   document.getElementById("datebox").innerHTML = ndate + " " + tmonth[nmonth] + " " + nyear;
 };
+// Button click
+document.getElementById("options").addEventListener("click", function() {
+  var ex = "Ex. #BDBDBD";
+  newColour = prompt("Choose your new background color. You must imput a HTML Hex colour code.", ex);
+  if (newColour === null || newColour === "" || newColour === ex) {
+    setCookie("background", "#BDBDBD", 365);
+    document.getElementById("body").style.backgroundColor = getCookie("background");
+    document.getElementById("options").style.backgroundColor = getCookie("background");
+  } else {
+    document.getElementById("body").style.backgroundColor = newColour;
+    document.getElementById("options").style.backgroundColor = newColour;
+    setCookie("background", newColour, 365);
+  };
+}, false);
 // Load complete function
 window.onload = function() {
-  document.getElementById("body").style.backgroundColor = "#BDBDBD";
+  document.getElementById("body").style.backgroundColor = getCookie("background");
+  document.getElementById("options").style.backgroundColor = getCookie("background");
   setTimeout(function() {
     document.getElementById("clockbox").style.opacity = "1";
+    document.getElementById("options").style.opacity = "1";
   }, 300);
   setTimeout(function() {
     document.getElementById("datebox").style.opacity = "1";
@@ -80,7 +101,7 @@ window.onload = function() {
       setTimeout(function() {
         document.getElementById("text").innerHTML = "Minimalist Tab";
         document.getElementById("text").style.opacity = "1";
-      }, 2000);
-    }, 7000);
-  }, 1500);
+      }, 500);
+    }, 2000);
+  }, 1000);
 };
