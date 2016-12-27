@@ -1,4 +1,4 @@
-/*Copyright Benjamin Developments (c) 2016-2017 - All rights reserved*/
+/*Copyright Benjamin Developments (c) 2017 - All rights reserved*/
 
 .titanic {
   float: none;
@@ -7,6 +7,7 @@
 body {
   background-color: "#FFFFFF";
   font-family: 'Oswald', sans-serif;
+  -webkit-user-select: none;
   transition: background-color 1s;
 }
 
@@ -15,6 +16,7 @@ body {
   border: none;
   background-color: "#FFFFFF";
   opacity: 0;
+  cursor: pointer;
   transition: background-color 1s, opacity 1s;
 }
 
@@ -23,20 +25,23 @@ body {
   font-size: 100%;
   opacity: 0;
   font-family: 'Montserrat', sans-serif;
+  cursor: default;
   transition: opacity 0.5s;
 }
 
 #clockbox {
   text-align: center;
   opacity: 0;
-  margin-top: 10%;
-  font-size: 1200%;
+  margin-top: 8%;
+  font-size: 1400%;
+  cursor: default;
   transition: opacity 1.5s;
 }
 
 #datebox {
   text-align: center;
   opacity: 0;
-  font-size: 600%;
+  font-size: 500%;
+  cursor: default;
   transition: opacity 1.5s;
 }
