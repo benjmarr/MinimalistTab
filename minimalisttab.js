@@ -35,7 +35,7 @@ if (document.addEventListener) {
 };
 // Check for background color
 if (getCookie("background") === "") {
-  setCookie("background", "#BDBDBD", 365);
+  setCookie("background", "#FA5858", 365);
 };
 // Clock and date
 var nyear;
@@ -71,8 +71,8 @@ function clock() {
 };
 // Button click
 document.getElementById("options").addEventListener("click", function() {
-  var ex = "Ex. #BDBDBD";
-  newColour = prompt("Choose your new background color. You must imput a HTML Hex colour code.", ex);
+  var ex = "Ex. #FA5858";
+  newColour = prompt("Choose your new background color. You must imput an HTML hex colour code...", ex);
   if (newColour === null || newColour === "" || newColour === ex) {
     setCookie("background", "#BDBDBD", 365);
     document.getElementById("body").style.backgroundColor = getCookie("background");
@@ -105,6 +105,7 @@ window.onload = function() {
     }, 2000);
   }, 1000);
 };
+// Google Analytics
 var _gaq = _gaq || [];
 _gaq.push(['_setAccount', 'UA-89454896-2']);
 _gaq.push(['_trackPageview']);

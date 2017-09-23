@@ -1,6 +1,11 @@
 Minimalist Tab change log
 All changes can be viewed at https://github.com/BenAndy/MinimalistTab/commits/master
 
+v1.1.6:
+Small changes. (75L75:108L108)
+Changed default background colour. (38L38)
+Changed example background colour. (74L74)
+
 v1.1.5:
 Fully implemented Google Analytics.
 
