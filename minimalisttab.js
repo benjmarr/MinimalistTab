@@ -3,13 +3,13 @@ console.log("Minimalist Tab copyright Benjamin Developments (c) 2017 - All right
 var gitUrl = "https://github.com/BenAndy/MinimalistTab/tree/master";
 var newColour;
 // Cookie handlers
-function setCookie(cname, cvalue, exdays) {
+function sc(cname, cvalue, exdays) {
   var d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
   var expires = "expires=" + d.toUTCString();
   document.cookie = cname + "=" + cvalue + "; " + expires;
 };
-function getCookie(cname) {
+function gc(cname) {
   var name = cname + "=";
   var ca = document.cookie.split(';');
   for (var i = 0; i < ca.length; i++) {
@@ -34,8 +34,8 @@ if (document.addEventListener) {
   });
 };
 // Check for background color
-if (getCookie("background") === "") {
-  setCookie("background", "#FA5858", 365);
+if (gc("background") === "") {
+  sc("background", "#FA5858", 365);
 };
 // Clock and date
 var nyear;
@@ -74,19 +74,19 @@ document.getElementById("options").addEventListener("click", function() {
   var ex = "Ex. #FA5858";
   newColour = prompt("Choose your new background color. You must imput an HTML hex colour code...", ex);
   if (newColour === null || newColour === "" || newColour === ex) {
-    setCookie("background", "#BDBDBD", 365);
-    document.getElementById("body").style.backgroundColor = getCookie("background");
-    document.getElementById("options").style.backgroundColor = getCookie("background");
+    sc("background", "#FA5858", 365);
+    document.getElementById("body").style.backgroundColor = gc("background");
+    document.getElementById("options").style.backgroundColor = gc("background");
   } else {
     document.getElementById("body").style.backgroundColor = newColour;
     document.getElementById("options").style.backgroundColor = newColour;
-    setCookie("background", newColour, 365);
+    sc("background", newColour, 365);
   };
 }, false);
 // Load complete function
 window.onload = function() {
-  document.getElementById("body").style.backgroundColor = getCookie("background");
-  document.getElementById("options").style.backgroundColor = getCookie("background");
+  document.getElementById("body").style.backgroundColor = gc("background");
+  document.getElementById("options").style.backgroundColor = gc("background");
   setTimeout(function() {
     document.getElementById("clockbox").style.opacity = "1";
     document.getElementById("options").style.opacity = "1";
